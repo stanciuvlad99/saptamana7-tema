@@ -42,7 +42,7 @@ public class SimpleDynamicButtons {
     }
 
     @FindBy(id = "buttonmessage")
-    private WebElement message;
+    public WebElement message;
 
     public WebElement getMessage() {
         return message;

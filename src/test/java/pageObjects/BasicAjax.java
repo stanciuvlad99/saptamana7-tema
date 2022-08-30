@@ -64,21 +64,6 @@ public class BasicAjax extends BaseTest {
 
 
 
-
-
-
-
-
-
-
-//    @FindBy(id ="combo1" )
-//    private Select category1;
-//
-//    public Select getCategory1() {
-//        return category;
-//    }
-
-
 //    @FindBy(id = "combo1")
 //    private List<WebElement>list;
 //

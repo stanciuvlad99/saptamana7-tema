@@ -9,7 +9,7 @@ import tests.BaseTest;
 
 public class JavaScriptRedirections {
 
-    public static final String EXPLANATION = "explanation";
+    public static final String EXPLANATION = "body > div > div.explanation";
 
     public JavaScriptRedirections(ChromeDriver driver){
         PageFactory.initElements( driver, this);
@@ -23,8 +23,8 @@ public class JavaScriptRedirections {
         return transportIn5Seconds;
     }
 
-    @FindBy(className = EXPLANATION)
-    private WebElement explanation;
+    @FindBy(css = EXPLANATION)
+    public WebElement explanation;
 
     public WebElement getExplanation() {
         return explanation;
@@ -43,4 +43,6 @@ public class JavaScriptRedirections {
     public WebElement getTransportedIn2Seconds() {
         return transportedIn2Seconds;
     }
+
+
 }

@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -18,21 +19,36 @@ public class JavaScriptRedirectionsTest extends BaseTest {
 
     @Test(description = "Check buttons that redirect to a new page, using wait and windowHandles")
     public void transportInSeconds() throws InterruptedException {
-        driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
+        driver.navigate().to("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         JavaScriptRedirections javaScriptRedirections = new JavaScriptRedirections(driver);
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
 
         javaScriptRedirections.getTransportIn5Seconds().click();
-//        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.className(EXPLANATION)));
-        Thread.sleep(5000);
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        assertEquals(javaScriptRedirections.getExplanation().getText().toLowerCase(),
-                "you have been successfully redirected.", "You have not been successfully redirected.");
-        javaScriptRedirections.getGoBackButton().click();
-        javaScriptRedirections.getTransportedIn2Seconds();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        assertEquals(javaScriptRedirections.getExplanation().getText().toLowerCase(),
-                "you have been successfully redirected.", "You have not been successfully redirected.");
+//        Thread.sleep(1000);
+//        Thread.sleep(1000);
+//        Thread.sleep(1000);
+//        Thread.sleep(1000);
+//        Thread.sleep(1000);
+//        Thread.sleep(1000);
+
+        while (true){
+            if (wait.until(ExpectedConditions.textToBePresentInElement(javaScriptRedirections.explanation,
+                    "You have been successfully redirected." )));
+            break;
+        }
+        String text = javaScriptRedirections.explanation.getText();
+        System.out.println(text);
+        assertEquals(javaScriptRedirections.getExplanation().getText(),
+                "You have been successfully redirected.", "You have not been successfully redirected.");
+        driver.navigate().back();
+        javaScriptRedirections.getTransportedIn2Seconds().click();
+        while (true) {
+            if (wait.until(ExpectedConditions.textToBePresentInElement(javaScriptRedirections.explanation,
+                    "You have been successfully redirected."))) ;
+            break;
+        }
+        assertEquals(javaScriptRedirections.getExplanation().getText(),
+                "You have been successfully redirected.", "You have not been successfully redirected.");
         javaScriptRedirections.getGoBackButton().click();
 
 

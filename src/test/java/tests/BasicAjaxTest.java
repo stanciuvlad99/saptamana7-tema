@@ -23,8 +23,6 @@ public class BasicAjaxTest extends BaseTest{
         BasicAjax basicAjax = new BasicAjax(driver);
 //        basicAjax.getCategory().selectByIndex(1);
 
-//        Select select = new Select(driver.findElement(By.id("combo1")));
-//        select.selectByIndex(1);
 
 //        basicAjax.getList().get(0).click();
 
