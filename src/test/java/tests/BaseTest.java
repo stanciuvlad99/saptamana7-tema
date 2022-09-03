@@ -15,34 +15,34 @@ public class BaseTest {
     protected ChromeDriver driver = null;
     protected ChromeDriver driver1= null;
 
-//    @BeforeMethod
-//    public void beforeMethod(){
-//        driver= BrowserConfigs.getChromeDriverManager();
-//        ChromeOptions chromeOptions = new ChromeOptions();
-//
-//    }
-//
-//    @AfterMethod()
-//    public void afterMethod(){
-//        if (driver != null){
-//            driver.quit();
-//        }
-//    }
-
-
     @BeforeMethod
-    public void beforeMethod1(){
-        driver1= BrowserConfigs.getChromeDriverManagerMobile();
+    public void beforeMethod(){
+        driver= BrowserConfigs.getChromeDriverManager();
         ChromeOptions chromeOptions = new ChromeOptions();
 
     }
 
     @AfterMethod()
-    public void afterMethod1(){
-        if (driver1 != null){
-            driver1.quit();
+    public void afterMethod(){
+        if (driver != null){
+            driver.quit();
         }
     }
+
+
+//    @BeforeMethod
+//    public void beforeMethod1(){
+//        driver1= BrowserConfigs.getChromeDriverManagerMobile();
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//
+//    }
+//
+//    @AfterMethod()
+//    public void afterMethod1(){
+//        if (driver1 != null){
+//            driver1.quit();
+//        }
+//    }
 
 
 
