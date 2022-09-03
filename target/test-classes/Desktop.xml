@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="tema" verbose="1" >
+    <test name="Order test" >
+        <classes>
+            <class name="tests.BasicAjaxTest" />
+        </classes>
+    </test>
+
+    <test name="tema1" >
+        <classes>
+            <class name="tests.DisabledDynamicButtonsTest" />
+        </classes>
+    </test>
+
+    <test name="tema2" >
+        <classes>
+            <class name="tests.JavaScriptRedirectionsTest" />
+        </classes>
+    </test>
+
+    <test name="tema3">
+        <classes>
+            <class name="tests.RefreshPageTest" />
+        </classes>
+    </test>
+
+    <test name="tema4" >
+        <classes>
+            <class name="tests.SimpleDynamicButtonsTest" />
+        </classes>
+    </test>
+
+
+
+
+
+</suite>

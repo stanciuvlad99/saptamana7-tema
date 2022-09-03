@@ -13,22 +13,36 @@ import java.time.Duration;
 public class BaseTest {
 
     protected ChromeDriver driver = null;
+    protected ChromeDriver driver1= null;
+
+//    @BeforeMethod
+//    public void beforeMethod(){
+//        driver= BrowserConfigs.getChromeDriverManager();
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//
+//    }
+//
+//    @AfterMethod()
+//    public void afterMethod(){
+//        if (driver != null){
+//            driver.quit();
+//        }
+//    }
+
 
     @BeforeMethod
-    public void beforeMethod(){
-        driver= BrowserConfigs.getChromeDriverManager();
+    public void beforeMethod1(){
+        driver1= BrowserConfigs.getChromeDriverManagerMobile();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("incognito");
+
     }
 
     @AfterMethod()
-    public void afterMethod(){
-        if (driver != null){
-            driver.quit();
+    public void afterMethod1(){
+        if (driver1 != null){
+            driver1.quit();
         }
     }
-
-
 
 
 
