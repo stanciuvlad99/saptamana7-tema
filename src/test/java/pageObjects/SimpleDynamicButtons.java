@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -9,7 +10,7 @@ public class SimpleDynamicButtons {
 
     public static final String TWO_BUTTON_ID = "button02";
     public static final String THREE_BUTTON_ID = "button03";
-    public SimpleDynamicButtons(ChromeDriver driver){
+    public SimpleDynamicButtons(RemoteWebDriver driver){
         PageFactory.initElements(driver,this);
     }
 

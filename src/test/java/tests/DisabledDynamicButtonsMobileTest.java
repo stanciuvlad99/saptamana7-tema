@@ -16,7 +16,7 @@ public class DisabledDynamicButtonsMobileTest extends BaseTest{
     @Test
     public void buttons() throws InterruptedException {
         driver1.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
-        SimpleDynamicButtons simpleDynamicButtons = new SimpleDynamicButtons((ChromeDriver) driver1);
+        SimpleDynamicButtons simpleDynamicButtons = new SimpleDynamicButtons( driver1);
         driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         simpleDynamicButtons.getStartButton().click();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));

@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -18,7 +19,7 @@ public class BasicAjax extends BaseTest {
     //option[@value='11']
 
 
-    public BasicAjax(ChromeDriver driver){
+    public BasicAjax(RemoteWebDriver driver){
         PageFactory.initElements(driver, this);
     }
 
