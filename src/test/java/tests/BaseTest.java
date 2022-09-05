@@ -34,14 +34,14 @@ public class BaseTest {
 
 
 //    @BeforeMethod
-//    public void beforeMethod(){
+//    public void bbeforeMethod(){
 //        driver= BrowserConfigs.getChromeDriverManager();
 //        ChromeOptions chromeOptions = new ChromeOptions();
 //
 //    }
 //
 //    @AfterMethod()
-//    public void afterMethod(){
+//    public void aafterMethod(){
 //        if (driver != null){
 //            driver.quit();
 //        }

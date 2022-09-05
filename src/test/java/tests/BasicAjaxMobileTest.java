@@ -24,7 +24,7 @@ public class BasicAjaxMobileTest extends BaseTest{
     @Test(description = "The items will be checked for correctness on the next page after pressing the Code it in button.")
     public void testCodeIn() {
         driver1.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
-        BasicAjax basicAjax = new BasicAjax((ChromeDriver) driver1);
+        BasicAjax basicAjax = new BasicAjax(driver1);
 //        basicAjax.getCategory().selectByIndex(1);
 
 

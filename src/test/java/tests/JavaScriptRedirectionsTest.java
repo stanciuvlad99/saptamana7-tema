@@ -21,7 +21,7 @@ public class JavaScriptRedirectionsTest extends BaseTest {
     @Test(description = "Check buttons that redirect to a new page, using wait and windowHandles")
     public void transportInSeconds() throws InterruptedException {
         driver1.navigate().to("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
-        JavaScriptRedirections javaScriptRedirections = new JavaScriptRedirections((ChromeDriver) driver1);
+        JavaScriptRedirections javaScriptRedirections = new JavaScriptRedirections(driver1);
         WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(6));
 
         javaScriptRedirections.getTransportIn5Seconds().click();

@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import tests.BaseTest;
@@ -11,7 +12,7 @@ public class JavaScriptRedirections {
 
     public static final String EXPLANATION = "body > div > div.explanation";
 
-    public JavaScriptRedirections(ChromeDriver driver){
+    public JavaScriptRedirections(RemoteWebDriver driver){
         PageFactory.initElements( driver, this);
     }
 
