@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-//    protected ChromeDriver driver = null;
+    protected ChromeDriver driver = null;
 //    protected ChromeDriver driver1= null;
 
     protected RemoteWebDriver driver1= null;
