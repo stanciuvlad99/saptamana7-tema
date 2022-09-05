@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -19,9 +20,9 @@ public class JavaScriptRedirectionsTest extends BaseTest {
 
     @Test(description = "Check buttons that redirect to a new page, using wait and windowHandles")
     public void transportInSeconds() throws InterruptedException {
-        driver.navigate().to("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
-        JavaScriptRedirections javaScriptRedirections = new JavaScriptRedirections(driver);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+        driver1.navigate().to("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
+        JavaScriptRedirections javaScriptRedirections = new JavaScriptRedirections((ChromeDriver) driver1);
+        WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(6));
 
         javaScriptRedirections.getTransportIn5Seconds().click();
 //        Thread.sleep(1000);
@@ -40,7 +41,7 @@ public class JavaScriptRedirectionsTest extends BaseTest {
         System.out.println(text);
         assertEquals(javaScriptRedirections.getExplanation().getText(),
                 "You have been successfully redirected.", "You have not been successfully redirected.");
-        driver.navigate().back();
+        driver1.navigate().back();
         javaScriptRedirections.getTransportedIn2Seconds().click();
         while (true) {
             if (wait.until(ExpectedConditions.textToBePresentInElement(javaScriptRedirections.explanation,

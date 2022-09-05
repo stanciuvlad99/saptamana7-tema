@@ -17,15 +17,15 @@ public class RefreshPageTest extends BaseTest{
 
     @Test
    public void refresh() throws InterruptedException {
-       driver.get("https://testpages.herokuapp.com/styled/refresh");
-       RefreshPage refreshPage = new RefreshPage(driver);
+       driver1.get("https://testpages.herokuapp.com/styled/refresh");
+       RefreshPage refreshPage = new RefreshPage((ChromeDriver) driver1);
        System.out.println(refreshPage.getRefreshDate().getText());
        int actual = Integer.parseInt(refreshPage.getRefreshDate().getText());
        int expected = Integer.parseInt(refreshPage.getRefreshDate1().getText());
        int b = 200;
        int a = 199;
        Thread.sleep(2000);
-       driver.navigate().refresh();
+       driver1.navigate().refresh();
        Thread.sleep(2000);
        System.out.println(refreshPage.getRefreshDate1().getText());
         Date timestamp = new Date();
