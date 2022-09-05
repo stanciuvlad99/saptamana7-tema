@@ -18,7 +18,7 @@ public class RefreshPageMobileTest extends BaseTest{
     @Test
     public void refresh() throws InterruptedException {
         driver1.get("https://testpages.herokuapp.com/styled/refresh");
-        RefreshPage refreshPage = new RefreshPage(driver1);
+        RefreshPage refreshPage = new RefreshPage((ChromeDriver) driver1);
         System.out.println(refreshPage.getRefreshDate().getText());
         int actual = Integer.parseInt(refreshPage.getRefreshDate().getText());
         int expected = Integer.parseInt(refreshPage.getRefreshDate1().getText());

@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -13,9 +14,9 @@ public class DisabledDynamicButtonsTest extends BaseTest{
 
     @Test
     public void buttons() throws InterruptedException {
-        driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
-        SimpleDynamicButtons simpleDynamicButtons = new SimpleDynamicButtons(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+        driver1.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
+        SimpleDynamicButtons simpleDynamicButtons = new SimpleDynamicButtons((ChromeDriver) driver1);
+        driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         simpleDynamicButtons.getStartButton().click();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
 //        simpleDynamicButtons.getOneButton().click();

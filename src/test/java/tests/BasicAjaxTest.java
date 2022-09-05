@@ -21,16 +21,16 @@ public class BasicAjaxTest extends BaseTest{
 
     @Test(description = "The items will be checked for correctness on the next page after pressing the Code it in button.")
     public void testCodeIn () {
-        driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
-        BasicAjax basicAjax = new BasicAjax(driver);
+        driver1.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
+        BasicAjax basicAjax = new BasicAjax((ChromeDriver) driver1);
 //        basicAjax.getCategory().selectByIndex(1);
 
 
 //        basicAjax.getList().get(0).click();
 
-        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(CATEGORY_CSS)));
+        fluentWait(driver1).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(CATEGORY_CSS)));
         basicAjax.getCategory().click();
-        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(LANGUAGE_CSS)));
+        fluentWait(driver1).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(LANGUAGE_CSS)));
         basicAjax.getLanguage().click();
         basicAjax.getCodeInItButton().click();
         System.out.println(basicAjax.getCategorryId().getText());

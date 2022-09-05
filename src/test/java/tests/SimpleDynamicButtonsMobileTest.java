@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import pageObjects.SimpleDynamicButtons;
@@ -15,7 +16,7 @@ public class SimpleDynamicButtonsMobileTest extends BaseTest{
     @Test(description = "At the end will check the message displayed.")
     public void butons(){
         driver1.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
-        SimpleDynamicButtons simpleDynamicButtons = new SimpleDynamicButtons(driver1);
+        SimpleDynamicButtons simpleDynamicButtons = new SimpleDynamicButtons((ChromeDriver) driver1);
         simpleDynamicButtons.getStartButton().click();
         simpleDynamicButtons.getOneButton().click();
         fluentWait(driver1).until(ExpectedConditions.visibilityOfElementLocated(By.id(TWO_BUTTON_ID)));

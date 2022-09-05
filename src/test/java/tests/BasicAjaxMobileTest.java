@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pageObjects.BasicAjax;
 
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
@@ -21,9 +22,9 @@ import static pageObjects.BasicAjax.LANGUAGE_CSS;
 public class BasicAjaxMobileTest extends BaseTest{
 
     @Test(description = "The items will be checked for correctness on the next page after pressing the Code it in button.")
-    public void testCodeIn () {
+    public void testCodeIn() {
         driver1.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
-        BasicAjax basicAjax = new BasicAjax(driver1);
+        BasicAjax basicAjax = new BasicAjax((ChromeDriver) driver1);
 //        basicAjax.getCategory().selectByIndex(1);
 
 
